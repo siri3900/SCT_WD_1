@@ -1,9 +1,6 @@
-// ===============================
-// SKILLWAVE WEBSITE JAVASCRIPT
-// ===============================
-
-
-// NAVBAR ACTIVE LINK
+// =========================
+// ACTIVE NAVIGATION MENU
+// =========================
 
 const navLinks = document.querySelectorAll("nav ul li a");
 
@@ -12,7 +9,9 @@ navLinks.forEach(link => {
     link.addEventListener("click", function(){
 
         navLinks.forEach(item => {
+
             item.classList.remove("active");
+
         });
 
         this.classList.add("active");
@@ -22,82 +21,114 @@ navLinks.forEach(link => {
 });
 
 
-// BUTTON CLICK ALERTS
-
-const exploreBtn = document.querySelector(".btn1");
-const demoBtn = document.querySelector(".btn2");
-
-exploreBtn.addEventListener("click", () => {
-    alert("Explore Courses Feature Coming Soon 🚀");
-});
-
-demoBtn.addEventListener("click", () => {
-    alert("Demo Video Will Be Available Soon 🎥");
-});
-
-
-// CONTACT FORM
-
-const sendBtn = document.querySelector(".send-btn");
-
-sendBtn.addEventListener("click", () => {
-
-    let name = document.querySelector("input[type='text']").value;
-
-    let email = document.querySelector("input[type='email']").value;
-
-    let message = document.querySelector("textarea").value;
-
-    if(name === "" || email === "" || message === ""){
-
-        alert("Please Fill All Fields ❌");
-
-    }
-    else{
-
-        alert("Message Sent Successfully ✅");
-
-    }
-
-});
-
-
-// SCROLL ANIMATION
-
-const cards = document.querySelectorAll(".card, .feature-card");
+// =========================
+// BACKGROUND COLOR CHANGE
+// =========================
 
 window.addEventListener("scroll", () => {
 
-    cards.forEach(card => {
+    const navbar = document.querySelector("nav");
 
-        const cardTop = card.getBoundingClientRect().top;
+    const body = document.body;
 
-        if(cardTop < window.innerHeight - 100){
+    const features = document.querySelector("#features").offsetTop;
 
-            card.style.opacity = "1";
-            card.style.transform = "translateY(0px)";
+    const courses = document.querySelector("#courses").offsetTop;
 
-        }
+    const contact = document.querySelector("#contact").offsetTop;
 
-    });
+    const scrollPosition = window.scrollY;
+
+
+    // HOME SECTION → LIGHT PINK
+
+    if(scrollPosition < features - 150){
+
+        navbar.style.background =
+        "rgba(255,240,245,0.9)";
+
+        body.style.background =
+        "linear-gradient(135deg,#ffe4ec,#fff1f2)";
+
+    }
+
+
+    // FEATURES SECTION → LIGHT GREEN
+
+    else if(scrollPosition >= features - 150 &&
+            scrollPosition < courses - 150){
+
+        navbar.style.background =
+        "linear-gradient(90deg,#bbf7d0,#86efac,#4ade80)";
+
+        body.style.background =
+        "linear-gradient(135deg,#dcfce7,#bbf7d0)";
+
+    }
+
+
+    // COURSES SECTION → LIGHT BLUE
+
+    else if(scrollPosition >= courses - 150 &&
+            scrollPosition < contact - 150){
+
+        navbar.style.background =
+        "linear-gradient(90deg,#93c5fd,#60a5fa,#2563eb)";
+
+        body.style.background =
+        "linear-gradient(135deg,#dbeafe,#bfdbfe)";
+
+    }
+
+
+    // CONTACT SECTION → LIGHT PURPLE
+
+    else{
+
+        navbar.style.background =
+        "linear-gradient(90deg,#d8b4fe,#c084fc,#9333ea)";
+
+        body.style.background =
+        "linear-gradient(135deg,#f3e8ff,#e9d5ff)";
+
+    }
 
 });
 
 
-// INITIAL CARD STYLE
+// =========================
+// BUTTON ALERTS
+// =========================
 
-cards.forEach(card => {
+document.querySelector(".btn1").addEventListener("click", () => {
 
-    card.style.opacity = "0";
-    card.style.transform = "translateY(80px)";
-    card.style.transition = "all 1s";
+    alert("Explore Courses Feature Coming Soon 🚀");
+
+});
+
+document.querySelector(".btn2").addEventListener("click", () => {
+
+    alert("Demo Video Will Be Available Soon 🎥");
 
 });
 
 
+// =========================
+// CONTACT FORM
+// =========================
+
+document.querySelector(".send-btn").addEventListener("click", () => {
+
+    alert("Message Sent Successfully ✅");
+
+});
+
+
+// =========================
 // TYPING EFFECT
+// =========================
 
-const text = "Upgrade Your Skills Faster";
+const text = "🚀 Upgrade Your Skills Faster";
 
 let index = 0;
 
@@ -120,92 +151,8 @@ document.querySelector(".tag").innerHTML = "";
 typingEffect();
 
 
-// DARK MODE TOGGLE
-
-const logo = document.querySelector(".logo");
-
-logo.addEventListener("dblclick", () => {
-
-    document.body.classList.toggle("dark-mode");
-
-});
-
-
-// DARK MODE STYLES
-
-const style = document.createElement("style");
-
-style.innerHTML = `
-
-.dark-mode{
-    background:linear-gradient(135deg,#0f172a,#1e1b4b);
-    color:white;
-}
-
-.dark-mode nav{
-    background:#1e293b;
-}
-
-.dark-mode .card,
-.dark-mode .feature-card,
-.dark-mode .contact-box,
-.dark-mode .float-box{
-    background:#1e293b;
-    color:white;
-}
-
-.dark-mode section p,
-.dark-mode .hero-text p{
-    color:#cbd5e1;
-}
-
-.dark-mode input,
-.dark-mode textarea{
-    background:#334155;
-    color:white;
-}
-
-`;
-
-document.head.appendChild(style);
-
-
-// COUNTER ANIMATION
-
-let counts = document.querySelectorAll(".count");
-
-counts.forEach(counter => {
-
-    counter.innerText = "0";
-
-    let updateCounter = () => {
-
-        let target = +counter.getAttribute("data-target");
-
-        let current = +counter.innerText;
-
-        let increment = target / 100;
-
-        if(current < target){
-
-            counter.innerText = `${Math.ceil(current + increment)}`;
-
-            setTimeout(updateCounter,30);
-
-        }
-        else{
-
-            counter.innerText = target;
-
-        }
-
-    };
-
-    updateCounter();
-
-});
-
-
+// =========================
 // CONSOLE MESSAGE
+// =========================
 
 console.log("SkillWave Website Loaded Successfully 🚀");

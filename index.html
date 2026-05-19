@@ -1,526 +1,246 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
+
 <meta charset="UTF-8">
+
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>SkillWave</title>
 
 <link rel="stylesheet" href="style.css">
 
-<style>
-
-*{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:Arial, sans-serif;
-    scroll-behavior:smooth;
-}
-
-body{
-    background:linear-gradient(135deg,#eef2ff,#ffeef8);
-    overflow-x:hidden;
-}
-
-/* NAVBAR */
-
-nav{
-    width:95%;
-    margin:20px auto;
-    padding:18px 35px;
-    background:rgba(255,255,255,0.7);
-    backdrop-filter:blur(15px);
-    border-radius:35px;
-
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-
-    box-shadow:0 10px 25px rgba(0,0,0,0.05);
-}
-
-.logo{
-    font-size:42px;
-    font-weight:bold;
-    color:#1d1d4f;
-}
-
-.logo span{
-    color:#7c4dff;
-}
-
-nav ul{
-    display:flex;
-    gap:35px;
-    list-style:none;
-}
-
-nav ul li a{
-    text-decoration:none;
-    color:#1e244f;
-    font-size:22px;
-    font-weight:700;
-    transition:0.3s;
-}
-
-nav ul li a:hover{
-    color:#7c4dff;
-}
-
-.active{
-    padding:14px 32px;
-    border-radius:25px;
-    background:linear-gradient(90deg,#4f46e5,#9333ea);
-    color:white !important;
-}
-
-/* HERO */
-
-.hero{
-    width:90%;
-    margin:70px auto;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    gap:40px;
-}
-
-.hero-text{
-    width:50%;
-}
-
-.tag{
-    display:inline-block;
-    padding:12px 22px;
-    border-radius:25px;
-    background:#ede9fe;
-    color:#5b21b6;
-    font-size:18px;
-    margin-bottom:30px;
-}
-
-.hero-text h1{
-    font-size:90px;
-    line-height:1.1;
-    color:#111827;
-}
-
-.gradient{
-    background:linear-gradient(90deg,#6366f1,#a855f7,#ec4899);
-    -webkit-background-clip:text;
-    -webkit-text-fill-color:transparent;
-}
-
-.hero-text p{
-    margin-top:25px;
-    font-size:28px;
-    line-height:1.7;
-    color:#6b7280;
-}
-
-/* BUTTONS */
-
-.buttons{
-    margin-top:40px;
-}
-
-.btn1{
-    padding:18px 42px;
-    border:none;
-    border-radius:40px;
-    background:linear-gradient(90deg,#6366f1,#9333ea);
-    color:white;
-    font-size:22px;
-    font-weight:bold;
-    cursor:pointer;
-    margin-right:15px;
-    transition:0.3s;
-}
-
-.btn1:hover{
-    transform:translateY(-5px);
-}
-
-.btn2{
-    padding:18px 42px;
-    border:2px solid #c4b5fd;
-    border-radius:40px;
-    background:white;
-    color:#4338ca;
-    font-size:22px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* HERO IMAGE */
-
-.hero-image{
-    width:45%;
-    position:relative;
-}
-
-.hero-image img{
-    width:100%;
-}
-
-/* FLOATING BOXES */
-
-.float-box{
-    position:absolute;
-    background:white;
-    padding:18px 25px;
-    border-radius:20px;
-    box-shadow:0 10px 20px rgba(0,0,0,0.08);
-    font-size:20px;
-    font-weight:bold;
-}
-
-.box1{
-    top:20px;
-    left:-30px;
-}
-
-.box2{
-    bottom:100px;
-    left:-20px;
-}
-
-.box3{
-    top:80px;
-    right:-20px;
-}
-
-/* FEATURES */
-
-.features{
-    width:90%;
-    margin:80px auto;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
-    gap:25px;
-}
-
-.feature-card{
-    background:white;
-    padding:35px;
-    border-radius:25px;
-    text-align:center;
-    box-shadow:0 10px 20px rgba(0,0,0,0.05);
-    transition:0.3s;
-}
-
-.feature-card:hover{
-    transform:translateY(-10px);
-}
-
-.feature-card h3{
-    margin-top:15px;
-    font-size:28px;
-    color:#1e1b4b;
-}
-
-.feature-card p{
-    margin-top:10px;
-    color:#6b7280;
-    font-size:18px;
-}
-
-/* COURSES */
-
-section{
-    width:90%;
-    margin:100px auto;
-    text-align:center;
-}
-
-section h2{
-    font-size:65px;
-    color:#111827;
-}
-
-section p{
-    margin-top:20px;
-    font-size:24px;
-    color:#6b7280;
-}
-
-.cards{
-    margin-top:50px;
-    display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-    gap:30px;
-}
-
-.card{
-    background:white;
-    padding:40px;
-    border-radius:30px;
-    box-shadow:0 10px 20px rgba(0,0,0,0.05);
-    transition:0.3s;
-}
-
-.card:hover{
-    transform:scale(1.04);
-}
-
-.card h3{
-    font-size:30px;
-    color:#312e81;
-    margin-bottom:15px;
-}
-
-.card p{
-    font-size:20px;
-}
-
-/* CONTACT */
-
-.contact-box{
-    width:65%;
-    margin:50px auto;
-    padding:50px;
-    border-radius:35px;
-    background:white;
-    box-shadow:0 10px 25px rgba(0,0,0,0.05);
-}
-
-.form-row{
-    display:flex;
-    gap:20px;
-}
-
-input,
-textarea{
-    width:100%;
-    padding:22px;
-    margin-top:25px;
-    border-radius:20px;
-    border:none;
-    background:#f3f4f6;
-    font-size:22px;
-    outline:none;
-}
-
-textarea{
-    height:200px;
-    resize:none;
-}
-
-.send-btn{
-    width:100%;
-    padding:22px;
-    margin-top:30px;
-    border:none;
-    border-radius:40px;
-    background:linear-gradient(90deg,#6366f1,#ec4899);
-    color:white;
-    font-size:24px;
-    font-weight:bold;
-    cursor:pointer;
-}
-
-/* FOOTER */
-
-footer{
-    margin-top:80px;
-    padding:35px;
-    text-align:center;
-    background:#1e1b4b;
-    color:white;
-    font-size:20px;
-}
-
-/* RESPONSIVE */
-
-@media(max-width:1000px){
-
-.hero{
-    flex-direction:column;
-}
-
-.hero-text{
-    width:100%;
-    text-align:center;
-}
-
-.hero-image{
-    width:90%;
-}
-
-.hero-text h1{
-    font-size:65px;
-}
-
-.form-row{
-    flex-direction:column;
-}
-
-.contact-box{
-    width:95%;
-}
-
-}
-
-</style>
 </head>
 
 <body>
 
-<!-- NAVBAR -->
+<!-- ================= NAVBAR ================= -->
 
 <nav>
 
 <div class="logo">
+
 Skill<span>Wave</span>
+
 </div>
 
 <ul>
+
 <li><a href="#" class="active">Home</a></li>
-<li><a href="#courses">Courses</a></li>
+
 <li><a href="#features">Features</a></li>
+
+<li><a href="#courses">Courses</a></li>
+
 <li><a href="#contact">Contact</a></li>
+
 </ul>
 
 </nav>
 
-<!-- HERO -->
+
+<!-- ================= HERO SECTION ================= -->
 
 <div class="hero">
 
 <div class="hero-text">
 
 <div class="tag">
+
 🚀 Upgrade Your Skills Faster
+
 </div>
 
 <h1>
+
 Learn Smarter,<br>
-<span class="gradient">Achieve More.</span>
+
+<span class="gradient">
+
+Achieve More.
+
+</span>
+
 </h1>
 
 <p>
-SkillWave helps you master modern technologies with
-expert courses, real-world projects and career-focused learning.
+
+SkillWave helps you master modern technologies
+with expert courses, projects and career-focused learning.
+
 </p>
 
 <div class="buttons">
 
 <button class="btn1">
+
 Explore Courses
+
 </button>
 
 <button class="btn2">
+
 Watch Demo
+
 </button>
 
 </div>
 
 </div>
+
 
 <div class="hero-image">
 
 <img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png">
 
 <div class="float-box box1">
+
 📚 350+ Courses
+
 </div>
 
 <div class="float-box box2">
+
 🏆 98% Success
+
 </div>
 
 <div class="float-box box3">
+
 👨‍🏫 Expert Mentors
-</div>
 
 </div>
 
 </div>
 
-<!-- FEATURES -->
+</div>
+
+
+<!-- ================= FEATURES ================= -->
 
 <section id="features">
 
 <h2>
+
 Why Choose <span class="gradient">SkillWave?</span>
+
 </h2>
 
 <p>
+
 Everything you need to grow your career and skills.
+
 </p>
 
 <div class="features">
 
 <div class="feature-card">
+
 <h3>Live Classes</h3>
+
 <p>Interactive sessions with experts.</p>
+
 </div>
 
 <div class="feature-card">
+
 <h3>Projects</h3>
+
 <p>Real-world project experience.</p>
+
 </div>
 
 <div class="feature-card">
+
 <h3>Certificates</h3>
+
 <p>Verified completion certificates.</p>
+
 </div>
 
 <div class="feature-card">
+
 <h3>Career Growth</h3>
+
 <p>Build skills for high-paying jobs.</p>
+
 </div>
 
 </div>
 
 </section>
 
-<!-- COURSES -->
+
+<!-- ================= COURSES ================= -->
 
 <section id="courses">
 
-<h2>Popular Courses</h2>
+<h2>
+
+Popular Courses
+
+</h2>
 
 <p>
+
 Choose your favorite technology and start learning.
+
 </p>
 
 <div class="cards">
 
 <div class="card">
+
 <h3>Web Development</h3>
+
 <p>HTML, CSS, JavaScript, React and backend development.</p>
+
 </div>
 
 <div class="card">
+
 <h3>Python Programming</h3>
+
 <p>Automation, AI, data science and Python projects.</p>
+
 </div>
 
 <div class="card">
+
 <h3>Cloud Computing</h3>
+
 <p>Learn AWS, Azure and cloud deployment.</p>
+
 </div>
 
 <div class="card">
+
 <h3>Artificial Intelligence</h3>
+
 <p>Machine learning and AI applications.</p>
+
 </div>
 
 </div>
 
 </section>
 
-<!-- CONTACT -->
+
+<!-- ================= CONTACT ================= -->
 
 <section id="contact">
 
 <h2>
+
 Get In <span class="gradient">Touch</span>
+
 </h2>
 
 <p>
+
 Have questions? We'd love to hear from you.
+
 </p>
 
 <div class="contact-box">
@@ -538,18 +258,26 @@ Have questions? We'd love to hear from you.
 <textarea placeholder="Your Message"></textarea>
 
 <button class="send-btn">
+
 Send Message
+
 </button>
 
 </div>
 
 </section>
 
-<!-- FOOTER -->
+
+<!-- ================= FOOTER ================= -->
 
 <footer>
+
 © 2026 SkillWave | All Rights Reserved
+
 </footer>
 
+<script src="script.js"></script>
+
 </body>
+
 </html>
