@@ -1,283 +1,152 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Movie Ticket Booking</title>
 
-<meta charset="UTF-8">
+  <!-- CSS FILE -->
+  <link rel="stylesheet" href="style.css">
 
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- GOOGLE FONT -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-<title>SkillWave</title>
-
-<link rel="stylesheet" href="style.css">
-
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
-<!-- ================= NAVBAR ================= -->
+  <!-- NAVBAR -->
+  <nav id="navbar">
 
-<nav>
+    <div class="logo">
+      Movie<span>Zone</span>
+    </div>
 
-<div class="logo">
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#movies">Movies</a></li>
+      <li><a href="#offers">Offers</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
 
-Skill<span>Wave</span>
+  </nav>
 
-</div>
+  <!-- HERO SECTION -->
+  <section class="hero" id="home">
 
-<ul>
+    <div class="hero-content">
 
-<li><a href="#" class="active">Home</a></li>
+      <h1>
+        Book Your <span>Movie Tickets</span>
+      </h1>
 
-<li><a href="#features">Features</a></li>
+      <p>
+        Experience blockbuster movies with amazing offers and premium theatres.
+      </p>
 
-<li><a href="#courses">Courses</a></li>
+      <a href="#movies" class="btn">
+        Explore Movies
+      </a>
 
-<li><a href="#contact">Contact</a></li>
+    </div>
 
-</ul>
+  </section>
 
-</nav>
+  <!-- MOVIES SECTION -->
+  <section id="movies">
 
+    <h2 class="section-title">
+      Trending Movies
+    </h2>
 
-<!-- ================= HERO SECTION ================= -->
+    <div class="cards">
 
-<div class="hero">
+      <div class="card">
 
-<div class="hero-text">
+        <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?q=80&w=1200&auto=format&fit=crop">
 
-<div class="tag">
+        <div class="card-content">
+          <h3>Action Storm</h3>
+          <p>High action thriller movie.</p>
+        </div>
 
-🚀 Upgrade Your Skills Faster
+      </div>
 
-</div>
+      <div class="card">
 
-<h1>
+        <img src="https://images.unsplash.com/photo-1517604931442-7e0c8ed2963c?q=80&w=1200&auto=format&fit=crop">
 
-Learn Smarter,<br>
+        <div class="card-content">
+          <h3>Galaxy Wars</h3>
+          <p>Epic science fiction adventure.</p>
+        </div>
 
-<span class="gradient">
+      </div>
 
-Achieve More.
+      <div class="card">
 
-</span>
+        <img src="https://images.unsplash.com/photo-1485846234645-a62644f84728?q=80&w=1200&auto=format&fit=crop">
 
-</h1>
+        <div class="card-content">
+          <h3>Midnight Mystery</h3>
+          <p>Suspense thriller experience.</p>
+        </div>
 
-<p>
+      </div>
 
-SkillWave helps you master modern technologies
-with expert courses, projects and career-focused learning.
+    </div>
 
-</p>
+  </section>
 
-<div class="buttons">
+  <!-- OFFERS -->
+  <section id="offers">
 
-<button class="btn1">
+    <h2 class="section-title">
+      Exclusive Offers
+    </h2>
 
-Explore Courses
+    <div class="cards">
 
-</button>
+      <div class="card">
+        <div class="card-content">
+          <h3>50% OFF</h3>
+          <p>Get discounts on Friday bookings.</p>
+        </div>
+      </div>
 
-<button class="btn2">
+      <div class="card">
+        <div class="card-content">
+          <h3>Free Popcorn</h3>
+          <p>Free popcorn with premium seats.</p>
+        </div>
+      </div>
 
-Watch Demo
+    </div>
 
-</button>
+  </section>
 
-</div>
+  <!-- CONTACT -->
+  <section id="contact">
 
-</div>
+    <h2 class="section-title">
+      Contact Us
+    </h2>
 
+    <p class="section-text">
+      Reach us anytime for booking support.
+    </p>
 
-<div class="hero-image">
+  </section>
 
-<img src="https://cdn-icons-png.flaticon.com/512/3135/3135755.png">
+  <!-- FOOTER -->
+  <footer>
+    © 2026 MovieZone
+  </footer>
 
-<div class="float-box box1">
-
-📚 350+ Courses
-
-</div>
-
-<div class="float-box box2">
-
-🏆 98% Success
-
-</div>
-
-<div class="float-box box3">
-
-👨‍🏫 Expert Mentors
-
-</div>
-
-</div>
-
-</div>
-
-
-<!-- ================= FEATURES ================= -->
-
-<section id="features">
-
-<h2>
-
-Why Choose <span class="gradient">SkillWave?</span>
-
-</h2>
-
-<p>
-
-Everything you need to grow your career and skills.
-
-</p>
-
-<div class="features">
-
-<div class="feature-card">
-
-<h3>Live Classes</h3>
-
-<p>Interactive sessions with experts.</p>
-
-</div>
-
-<div class="feature-card">
-
-<h3>Projects</h3>
-
-<p>Real-world project experience.</p>
-
-</div>
-
-<div class="feature-card">
-
-<h3>Certificates</h3>
-
-<p>Verified completion certificates.</p>
-
-</div>
-
-<div class="feature-card">
-
-<h3>Career Growth</h3>
-
-<p>Build skills for high-paying jobs.</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= COURSES ================= -->
-
-<section id="courses">
-
-<h2>
-
-Popular Courses
-
-</h2>
-
-<p>
-
-Choose your favorite technology and start learning.
-
-</p>
-
-<div class="cards">
-
-<div class="card">
-
-<h3>Web Development</h3>
-
-<p>HTML, CSS, JavaScript, React and backend development.</p>
-
-</div>
-
-<div class="card">
-
-<h3>Python Programming</h3>
-
-<p>Automation, AI, data science and Python projects.</p>
-
-</div>
-
-<div class="card">
-
-<h3>Cloud Computing</h3>
-
-<p>Learn AWS, Azure and cloud deployment.</p>
-
-</div>
-
-<div class="card">
-
-<h3>Artificial Intelligence</h3>
-
-<p>Machine learning and AI applications.</p>
-
-</div>
-
-</div>
-
-</section>
-
-
-<!-- ================= CONTACT ================= -->
-
-<section id="contact">
-
-<h2>
-
-Get In <span class="gradient">Touch</span>
-
-</h2>
-
-<p>
-
-Have questions? We'd love to hear from you.
-
-</p>
-
-<div class="contact-box">
-
-<div class="form-row">
-
-<input type="text" placeholder="Your Name">
-
-<input type="email" placeholder="Your Email">
-
-</div>
-
-<input type="text" placeholder="Subject">
-
-<textarea placeholder="Your Message"></textarea>
-
-<button class="send-btn">
-
-Send Message
-
-</button>
-
-</div>
-
-</section>
-
-
-<!-- ================= FOOTER ================= -->
-
-<footer>
-
-© 2026 SkillWave | All Rights Reserved
-
-</footer>
-
-<script src="script.js"></script>
+  <!-- JS FILE -->
+  <script src="script.js"></script>
 
 </body>
-
 </html>
